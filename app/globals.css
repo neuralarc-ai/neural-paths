@@ -120,3 +120,21 @@
     @apply bg-background text-foreground;
   }
 }
+
+.grain-texture {
+  position: relative;
+  overflow: visible;
+}
+
+.grain-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/grain.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 999;
+}
