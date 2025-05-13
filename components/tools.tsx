@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { ShineBorder } from "@/components/magicui/shine-border";
+import { useState } from "react";
 
 const tools = [
   {
@@ -20,7 +24,7 @@ const tools = [
     subtitle: "AI for Smarter Business Decisions",
     description:
       "Okra gives you deep insights and analysis on your business idea. Understand potential, spot gaps and make smarter decisions with AI-powered clarity.",
-    link: "https://okra.ai",
+    link: "https://okra.neuralarc.ai",
   },
   {
     name: "Spider",
@@ -30,7 +34,7 @@ const tools = [
     subtitle: "AI for Pitch Deck Analyser",
     description:
       "Spider reviews your pitch deck with AI-level precision to spot strengths, gaps, and investor-readiness. Get clear, actionable insights to refine your story and win attention.",
-    link: "https://spider.ai",
+    link: "https://spider.neuralarc.ai",
   },
   {
     name: "Pikra",
@@ -40,30 +44,42 @@ const tools = [
     subtitle: "AI for Smart Resume Analysis",
     description:
       "Pikra is a AI to analyse, score, and rank resumes with speed and precision. Identify the best-fit candidates instantly and streamline your hiring decisions.",
-    link: "https://pikra.ai",
+    link: "https://pikra.neuralarc.ai",
   },
 ];
 
 const Tools = () => {
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+
   return (
-    <section className="w-full bg-[#C0C5BA] py-16 px-4 lg:px-0">
+    <section className="w-full bg-[#C0C5BA] py-16 px-5 lg:px-20">
       <div className="max-w-[1488px] mx-auto">
-        <h2 className="text-black text-4xl lg:text-5xl font-semibold text-center mb-14">
+        <h2 className="text-black text-4xl lg:text-5xl xl:text-6xl font-semibold text-center mb-14">
           Your AI Toolbox for Smarter, Faster Solutions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {tools.map((tool, idx) => (
+          {tools.map((tool) => (
             <div
               key={tool.name}
-              className="relative bg-[#232323] lg:h-[482px] rounded-2xl lg:p-14 flex flex-col justify-between min-h-[340px] overflow-hidden shadow-lg"
+              className="relative bg-[#232323] lg:h-[482px] rounded-3xl p-8 xl:p-14 flex flex-col justify-between min-h-[340px] overflow-hidden shadow-lg group"
+              onMouseEnter={() => setHoveredCard(tool.name)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
+              <div className={`absolute inset-0 transition-opacity duration-500 ${hoveredCard === tool.name ? 'opacity-100' : 'opacity-0'}`}>
+                <ShineBorder 
+                  shineColor={["#B7A98B", "#5B7CA6", "#C6AEA3"]}
+                  duration={8}
+                  borderWidth={8}
+                  className="rounded-3xl"
+                />
+              </div>
               {/* Illustration BG */}
               <Image
                 src={tool.illustration}
                 alt="bg-illustration"
-                width={180}
-                height={180}
-                className="absolute top-0 right-0 z-0 pointer-events-none"
+                width={320}
+                height={420}
+                className="absolute top-0 right-0 xl:w-1/2 xl:h-4/6 z-0 pointer-events-none"
               />
               {/* Card Content */}
               <div className="relative z-10 flex flex-col justify-between h-full">
@@ -82,19 +98,29 @@ const Tools = () => {
                   </div>
                   {/* Right: Arrow Icon Link */}
                   <a
-                    href={tool.link}
+                    href={
+                      tool.name === "Lawbit"
+                        ? "https://lawbit.ai"
+                        : tool.name === "Okra"
+                        ? "https://okra.neuralarc.ai"
+                        : tool.name === "Spider"
+                        ? "https://spider.neuralarc.ai"
+                        : tool.name === "Pikra"
+                        ? "https://pikra.neuralarc.ai"
+                        : tool.link
+                    }
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group"
                   >
-                    <div className="rounded-full border-2 border-[#5A5A5A] w-14 h-14 flex items-center justify-center transition-colors duration-200 group-hover:border-white">
-                      <ArrowUpRight className="w-8 h-8 text-[#5A5A5A] transition-colors duration-200 group-hover:text-white" />
+                    <div className="rounded-full border border-[#5A5A5A] w-14 h-14 flex items-center justify-center transition-colors duration-300 ease-in-out group-hover:border-white">
+                      <ArrowUpRight className="w-8 h-8 text-[#5A5A5A] transition-colors duration-300 ease-in-out group-hover:text-white" />
                     </div>
                   </a>
                 </div>
                 {/* Bottom */}
                 <div className="flex flex-col gap-2 mt-auto">
-                  <span className="text-white text-lg font-semibold mb-1">{tool.subtitle}</span>
+                  <span className="text-white text-lg lg:text-2xl font-semibold mb-4">{tool.subtitle}</span>
                   <span className="text-[#E6E6E6] text-base font-normal leading-relaxed">
                     {tool.description}
                   </span>

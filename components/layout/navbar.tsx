@@ -3,18 +3,18 @@ import Image from 'next/image';
 
 const Navbar = () => {
   return (
-    <nav className="max-w-[1920px] mx-auto w-full flex items-center justify-between lg:px-8 lg:py-8 py-4 px-4">
+    <nav className="max-w-[1920px] z-40 mx-auto w-full flex items-center justify-between lg:px-8 lg:py-8 py-4 px-4">
       {/* Left: Logo */}
-      <div className="flex items-center">
+      <Link href="/" className="flex cursor-pointer items-center">
         <Image
           src="/images/neural-paths-logo.svg"
           alt="Neural Paths Logo"
           width={82}
           height={40}
           priority
-          className=''
+          
         />
-      </div>
+      </Link>
       {/* Right: Link and Button */}
       <div className="flex items-center space-x-6">
         <Link href="/ai-solutions" className="lg:text-xl text-white">

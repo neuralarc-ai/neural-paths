@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fustat } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/layout/footer";
 
 const fustat = Fustat({
   subsets: ["latin"],
