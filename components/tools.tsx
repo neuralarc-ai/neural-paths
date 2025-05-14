@@ -54,14 +54,14 @@ const Tools = () => {
   return (
     <section className="w-full bg-[#C0C5BA] py-16 px-5 lg:px-20">
       <div className="max-w-[1488px] mx-auto">
-        <h2 className="text-black text-4xl lg:text-5xl xl:text-6xl font-semibold text-center mb-14">
+        <h2 className="text-black text-4xl lg:text-5xl xl:text-6xl font-semibold text-center mb-14 tracking-tight">
           Your AI Toolbox for Smarter, Faster Solutions
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {tools.map((tool) => (
             <div
               key={tool.name}
-              className="relative bg-[#232323] lg:h-[482px] rounded-3xl p-8 xl:p-14 flex flex-col justify-between min-h-[340px] overflow-hidden shadow-lg group"
+              className="relative bg-[#232323] lg:h-[382px] rounded-3xl p-8 xl:p-14 flex flex-col justify-between min-h-[340px] overflow-hidden shadow-lg group"
               onMouseEnter={() => setHoveredCard(tool.name)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -87,14 +87,13 @@ const Tools = () => {
                 <div className="flex flex-row justify-between items-start mb-8">
                   {/* Left: Logo and Name */}
                   <div className="flex flex-col gap-4">
-                    <Image
-                      src={tool.logo}
-                      alt={tool.name + ' logo'}
-                      width={68}
-                      height={86}
-                      style={{ color: tool.color }}
-                    />
-                    <span className="text-white lg:text-[56px] font-semibold">{tool.name}</span>
+                    <span className={`lg:text-[56px] font-semibold ${
+                      tool.name === "Lawbit" ? "text-[#978163]" :
+                      tool.name === "Okra" ? "text-[#425B88]" :
+                      tool.name === "Spider" ? "text-[#7C7C7C]" :
+                      tool.name === "Pikra" ? "text-[#CEAD9D]" :
+                      "text-white"
+                    }`}>{tool.name}</span>
                   </div>
                   {/* Right: Arrow Icon Link */}
                   <a

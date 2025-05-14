@@ -34,7 +34,7 @@ export default function TermsOfUsePage() {
               <li>
                 <b>License to Use Services</b>
                 <p className="mt-2 text-white/90">
-                  Subject to your compliance with these Terms, NeuralArc grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Services solely for your internal business purposes. You shall not use the Services to develop competing products or reverse engineer any aspect of the platform.
+                  Subject to your compliance with these Terms, NeuralPaths grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Services solely for your internal business purposes. You shall not use the Services to develop competing products or reverse engineer any aspect of the platform.
                 </p>
               </li>
               <li>

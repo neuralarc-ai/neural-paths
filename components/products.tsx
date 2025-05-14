@@ -25,12 +25,12 @@ const products = [
     ],
   },
   {
-    name: "Tyme",
-    subtitle: "AI for Instant Global Time Insights",
+    name: "Ava",
+    subtitle: "AI for Blood Report Analysis",
     description:
-      "Tyme lets you instantly compare time across the globe with AI-powered precision. From quick time zone checks to smart scheduling, global planning becomes effortless.",
-    color: "#7B6142",
-    icon: "/images/tools/tyme.svg",
+      "Ava uses AI to analyze blood reports, identify patterns, and provide clear health insights. Transform complex medical data into actionable recommendations for better health understanding.",
+    color: "#6B2E4A",
+    icon: "/images/tools/ava.svg",
     features: [],
   },
   {
@@ -42,26 +42,39 @@ const products = [
     icon: "/images/thirdai.svg",
     features: [],
   },
+  {
+    name: "Tyme",
+    subtitle: "AI for Instant Global Time Insights",
+    description:
+      "Tyme lets you instantly compare time across the globe with AI-powered precision. From quick time zone checks to smart scheduling, global planning becomes effortless.",
+    color: "#7B6142",
+    icon: "/images/tools/tyme.svg",
+    features: [],
+  },
 ];
 
 export default function Products() {
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     slides: {
-      perView: 1.2,
+      perView: 1.1,
       spacing: 24,
     },
     breakpoints: {
       "(min-width: 1024px)": {
-        slides: { perView: 2.2, spacing: 32 },
+        slides: { perView: 2.5, spacing: 32 },
+      },
+      "(min-width: 1280px)": {
+        slides: { perView: 2.5, spacing: 32 },
       },
     },
     mode: "free-snap",
+    loop: true,
   });
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
-    <section className="w-full py-16">
-      <h2 className="text-black text-3xl lg:text-5xl xl:text-6xl font-semibold text-center mb-12 tracking-tighter max-w-6xl text-pretty mx-auto">
+    <section className="max-w-[1920px] mx-auto w-full py-16">
+      <h2 className="text-black text-3xl lg:text-4xl xl:text-6xl px-10 xl:px-0 font-semibold text-center mb-12 tracking-tighter max-w-6xl text-pretty mx-auto">
         Each Solution, Perfectly Tailored to Overcome Your Unique Obstacles
       </h2>
       <div ref={sliderRef} className="keen-slider px-2 lg:px-8">
@@ -74,18 +87,20 @@ export default function Products() {
                 idx === 0
                   ? 'linear-gradient(45deg, #233330 0%, #3E5F58 100%)'
                   : idx === 1
-                  ? 'linear-gradient(45deg, #423629 0%, #947254 100%)'
+                  ? 'linear-gradient(45deg, #4A1E2E 0%, #8B3D5A 100%)'
                   : idx === 2
                   ? 'linear-gradient(45deg, #2F334A 0%, #2F334A 100%)'
+                  : idx === 3
+                  ? 'linear-gradient(45deg, #423629 0%, #947254 100%)'
                   : `linear-gradient(45deg, ${product.color} 0%, rgba(255,255,255,0.08) 100%)`,
-              width: "clamp(320px, 60vw, 540px)",
-              minWidth: "clamp(320px, 60vw, 540px)",
-              maxWidth: "540px",
+              width: "clamp(280px, calc(100vw - 48px), 480px)",
+              minWidth: "clamp(280px, calc(100vw - 48px), 480px)",
+              maxWidth: "480px",
             }}
             onMouseEnter={() => setHoveredCard(product.name)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            {(idx === 1 || idx === 2) && (
+            {(idx === 2 || idx === 3) && (
               <div className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none transition-opacity duration-300 ${hoveredCard === product.name ? 'opacity-100' : 'opacity-0'}`}>
                 <span className="bg-black/80 text-white text-lg font-semibold px-6 py-3 rounded-2xl shadow-lg border border-white/10">Coming Soon</span>
               </div>
@@ -98,12 +113,11 @@ export default function Products() {
                 className="rounded-3xl"
               />
             </div>
-            <div className="p-8 lg:p-14 flex lg:min-h-[482px] flex-col justify-between h-full">
+            <div className="p-8 lg:p-14 flex lg:min-h-[382px] flex-col justify-between h-full">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex flex-col gap-4">
                   <div className="flex items-center gap-4 overflow-hidden">
-                    <Image src={product.icon} alt={product.name + ' icon'} width={64} height={64} className="object-contain w-10 h-10 lg:w-16 lg:h-16" />
-                    <span className="text-white text-3xl lg:text-6xl font-semibold">{product.name}</span>
+                    <span className="text-white text-3xl xl:text-6xl font-semibold">{product.name}</span>
                   </div>
                   <span className="text-white text-lg font-medium mb-2">{product.subtitle}</span>
                 </div>
@@ -134,7 +148,7 @@ export default function Products() {
                         alt={`Rovyk feature ${idx + 1}`}
                         width={82}
                         height={82}
-                        className="object-contain w-20 h-20"
+                        className="object-contain xl:w-20 xl:h-20 w-12 h-12"
                       />
                     ))}
                   </div>
@@ -146,15 +160,6 @@ export default function Products() {
             </div>
           </div>
         ))}
-        {/* Empty half-width card for slider effect */}
-        <div
-          className="keen-slider__slide rounded-3xl bg-transparent"
-          style={{
-            width: "clamp(160px, 20vw, 270px)",
-            minWidth: "clamp(160px, 20vw, 270px)",
-            maxWidth: "170px",
-          }}
-        />
       </div>
     </section>
   );
