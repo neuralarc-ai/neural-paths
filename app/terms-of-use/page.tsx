@@ -52,31 +52,31 @@ export default function TermsOfUsePage() {
               <li>
                 <b>Ownership and Intellectual Property</b>
                 <p className="mt-2 text-white/90">
-                  All content, trademarks, and software associated with the Services are the exclusive property of NeuralArc or its licensors. No rights are granted except as explicitly set forth herein.
+                  All content, trademarks, and software associated with the Services are the exclusive property of NeuralPaths or its licensors. No rights are granted except as explicitly set forth herein.
                 </p>
               </li>
               <li>
                 <b>Third-Party Integrations</b>
                 <p className="mt-2 text-white/90">
-                  The Services may contain links or integrations with third-party platforms. NeuralArc is not responsible for the content, functionality, or privacy practices of such third parties.
+                  The Services may contain links or integrations with third-party platforms. NeuralPaths is not responsible for the content, functionality, or privacy practices of such third parties.
                 </p>
               </li>
               <li>
                 <b>Disclaimers</b>
                 <p className="mt-2 text-white/90">
-                  The Services are provided &quot;as is&quot; and &quot;as available.&quot; NeuralArc makes no warranties or representations, express or implied, regarding the Services, including but not limited to merchantability, fitness for a particular purpose, accuracy, or non-infringement.
+                  The Services are provided &quot;as is&quot; and &quot;as available.&quot; NeuralPaths makes no warranties or representations, express or implied, regarding the Services, including but not limited to merchantability, fitness for a particular purpose, accuracy, or non-infringement.
                 </p>
               </li>
               <li>
                 <b>Limitation of Liability</b>
                 <p className="mt-2 text-white/90">
-                  To the maximum extent permitted by applicable law, NeuralArc shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for loss of profits or revenue, arising from or related to your use of the Services.
+                  To the maximum extent permitted by applicable law, NeuralPaths shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for loss of profits or revenue, arising from or related to your use of the Services.
                 </p>
               </li>
               <li>
                 <b>Indemnification</b>
                 <p className="mt-2 text-white/90">
-                  You agree to indemnify, defend, and hold harmless NeuralArc, its officers, directors, employees, and affiliates from any claim, demand, liability, or expense arising out of your breach of these Terms or violation of applicable law.
+                  You agree to indemnify, defend, and hold harmless NeuralPaths, its officers, directors, employees, and affiliates from any claim, demand, liability, or expense arising out of your breach of these Terms or violation of applicable law.
                 </p>
               </li>
               <li>
