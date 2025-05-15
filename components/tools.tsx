@@ -65,6 +65,11 @@ const Tools = () => {
               onMouseEnter={() => setHoveredCard(tool.name)}
               onMouseLeave={() => setHoveredCard(null)}
             >
+              {tool.name === "Pikra" && (
+                <div className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none transition-opacity duration-300 ${hoveredCard === tool.name ? 'opacity-100' : 'opacity-0'}`}>
+                  <span className="bg-black/80 text-white text-lg font-semibold px-6 py-3 rounded-2xl shadow-lg border border-white/10">Coming Soon</span>
+                </div>
+              )}
               <div className={`absolute inset-0 transition-opacity duration-500 ${hoveredCard === tool.name ? 'opacity-100' : 'opacity-0'}`}>
                 <ShineBorder 
                   shineColor={["#B7A98B", "#5B7CA6", "#C6AEA3"]}
@@ -105,15 +110,15 @@ const Tools = () => {
                         : tool.name === "Spider"
                         ? "https://spider.neuralarc.ai"
                         : tool.name === "Pikra"
-                        ? "https://pikra.neuralarc.ai"
+                        ? "#"
                         : tool.link
                     }
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group"
+                    className={`group ${tool.name === "Pikra" ? "pointer-events-none" : ""}`}
                   >
-                    <div className="rounded-full border border-[#5A5A5A] w-14 h-14 flex items-center justify-center transition-colors duration-300 ease-in-out group-hover:border-white">
-                      <ArrowUpRight className="w-8 h-8 text-[#5A5A5A] transition-colors duration-300 ease-in-out group-hover:text-white" />
+                    <div className={`rounded-full border border-[#5A5A5A] w-14 h-14 flex items-center justify-center transition-colors duration-300 ease-in-out ${tool.name === "Pikra" ? "opacity-60" : "group-hover:border-white"}`}>
+                      <ArrowUpRight className={`w-8 h-8 text-[#5A5A5A] transition-colors duration-300 ease-in-out ${tool.name === "Pikra" ? "" : "group-hover:text-white"}`} />
                     </div>
                   </a>
                 </div>

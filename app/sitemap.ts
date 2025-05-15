@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://neural-paths.com';
+  const baseUrl = 'https://neuralpaths.ai';
   
   // Define your static routes
   const routes = [
     '',
-    '/products',
-    '/about',
-    '/contact',
+    '/ai-solutions',
+    '/responsible-ai',
+    '/disclaimer',
     '/privacy-policy',
     '/terms-of-service',
   ].map((route) => ({
@@ -18,30 +18,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }));
 
-  // Add dynamic routes for products
+  // Add products with their specific domains
   const products = [
     {
-      slug: 'rovyk',
       name: 'Rovyk',
+      url: 'https://rovyk.com',
     },
     {
-      slug: 'ava',
-      name: 'Ava',
-    },
-    {
-      slug: 'gitpeek',
       name: 'Gitpeek',
+      url: 'https://gitpeek.neuralpaths.ai',
     },
     {
-      slug: 'tyme',
       name: 'Tyme',
+      url: 'https://tyme.neuralpaths.ai',
+    },
+    {
+      name: 'Ava',
+      url: `https://ava.neuralpaths.ai`,
     },
   ].map((product) => ({
-    url: `${baseUrl}/products/${product.slug}`,
+    url: product.url,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.9, // Higher priority for main products
   }));
 
-  return [...routes, ...products];
+  // Add tools with their specific domains
+  const tools = [
+    {
+      name: 'Lawbit',
+      url: 'https://lawbit.ai',
+    },
+    {
+      name: 'Okra',
+      url: 'https://okra.neuralarc.ai',
+    },
+    {
+      name: 'Spider',
+      url: 'https://spider.neuralarc.ai',
+    },
+    {
+      name: 'Pikra',
+      url: 'https://pikra.neuralarc.ai',
+    },
+  ].map((tool) => ({
+    url: tool.url,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  
+
+  return [
+    ...routes,
+    ...products,
+    ...tools,
+  ];
 } 
