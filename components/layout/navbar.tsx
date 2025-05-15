@@ -34,7 +34,7 @@ const Navbar = () => {
       {/* Right: Link and Button */}
       <div className="hidden lg:flex items-center space-x-6">
         <Link href="/ai-solutions" className="lg:text-xl text-white">
-          Tailored AI Solutions
+          AI Solutions
         </Link>
         <button
           className="bg-[#C1BBB4] cursor-pointer lg:text-xl rounded-full text-black px-14 py-4 hover:shadow-[0_2px_0_0_#6B5B4D40] shadow-[0_4px_0_0_#6B5B4D40] transition-all duration-300"

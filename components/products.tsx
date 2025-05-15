@@ -68,7 +68,6 @@ export default function Products() {
       },
     },
     mode: "free-snap",
-    loop: true,
   });
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 

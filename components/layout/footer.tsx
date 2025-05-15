@@ -30,7 +30,7 @@ const Footer = () => {
               Focused AI Products
             </Link>
             <Link href="/ai-solutions" className="text-lg hover:underline">
-              Tailored AI Solutions
+              AI Solutions
             </Link>
           </div>
         </div>
