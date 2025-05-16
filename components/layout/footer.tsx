@@ -20,10 +20,7 @@ const Footer = () => {
           </div>
           {/* Center/Right: Navigation links */}
           <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-16 flex-1 lg:justify-end justify-center mb-6 lg:mb-0">
-            <Link
-              href="/"
-              className="text-lg hover:underline"
-            >
+            <Link href="/" className="text-lg hover:underline">
               Neural Paths AI Suite
             </Link>
             <Link href="#tools-section" className="text-lg hover:underline">
@@ -62,18 +59,20 @@ const Footer = () => {
               href="/responsible-ai"
               className="hover:underline hover:text-white transition-all duration-300 font-light lg:text-base text-sm text-[#AFAFAF]"
             >
-              Responsible AI
+              Responsible & Ethical AI
             </Link>
           </div>
           <div className="flex items-center gap-2 mt-2 lg:mt-0">
             <span>Copyright 2025. All rights reserved. A thing by</span>
-            <Image
-              src="/images/neural-arc-logo.svg"
-              alt="NeuralArc Logo"
-              width={100}
-              height={20}
-              className="inline-block"
-            />
+            <Link href="https://neuralarc.ai" target="_blank">
+              <Image
+                src="/images/neural-arc-logo.svg"
+                alt="NeuralArc Logo"
+                width={100}
+                height={20}
+                className="inline-block"
+              />
+            </Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   DropdownMenu,
@@ -13,6 +14,9 @@ import {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -24 }}
@@ -33,11 +37,14 @@ const Navbar = () => {
       </Link>
       {/* Right: Link and Button */}
       <div className="hidden lg:flex items-center space-x-6">
-        <Link href="/ai-solutions" className="lg:text-xl text-white">
-          AI Solutions
+        <Link 
+          href={isHomePage ? "/ai-solutions" : "/"} 
+          className="lg:text-xl text-white"
+        >
+          {isHomePage ? "AI Solutions" : "Home"}
         </Link>
         <button
-          className="bg-[#C1BBB4] cursor-pointer lg:text-xl rounded-full text-black px-14 py-4 hover:shadow-[0_2px_0_0_#6B5B4D40] shadow-[0_4px_0_0_#6B5B4D40] transition-all duration-300"
+          className="bg-[#C1BBB4] cursor-pointer lg:text-xl rounded-full text-black px-14 py-4 hover:shadow-[0_3px_0_0_#6B5B4D40] shadow-[0_5px_0_0_#6B5B4D40] transition-all duration-300"
         >
           Sign In
         </button>
@@ -73,7 +80,12 @@ const Navbar = () => {
                   transition={{ duration: 0.18, ease: 'easeOut' }}
                 >
                   <DropdownMenuItem asChild>
-                    <Link href="/ai-solutions" className="w-full">AI Solutions</Link>
+                    <Link 
+                      href={isHomePage ? "/ai-solutions" : "/"} 
+                      className="w-full"
+                    >
+                      {isHomePage ? "AI Solutions" : "Home"}
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <button

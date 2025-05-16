@@ -32,9 +32,9 @@ export default function AiSolutionsHeroSection() {
           </p>
           <a
             href="#contact-form"
-            className="bg-[#C1BBB4] text-black w-fit text-lg rounded-full px-8 py-2 flex items-center gap-3 shadow-[0_5px_0_0_#6B5B4D] hover:shadow-[0_3px_0_0_#6B5B4D] border border-[#E6E6E6] hover:bg-[#F5F5F5] transition"
+            className="bg-[#C1BBB4] text-black w-fit text-xl rounded-full px-10 py-5 flex items-center gap-3 shadow-[0_5px_0_0_#6B5B4D40] hover:shadow-[0_3px_0_0_#6B5B4D40] hover:bg-[#F5F5F5] transition"
           >
-            Craft Your AI Product
+            Let&apos;s Get Started
             <span className="inline-block ml-2">
               <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
             </span>

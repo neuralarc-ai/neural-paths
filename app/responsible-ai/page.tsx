@@ -17,7 +17,7 @@ export default function ResponsibleAIPage() {
             priority
           />
           <div className="relative z-10 flex flex-col items-center justify-center w-full py-12">
-            <h1 className="text-[#232323] text-4xl md:text-6xl font-semibold text-center mb-4">Responsible AI</h1>
+            <h1 className="text-[#232323] text-4xl md:text-6xl font-semibold text-center mb-4">Responsible & Ethical AI</h1>
             <p className="text-[#232323]/80 text-lg md:text-xl text-center font-light">Effective Date: April, 2025</p>
           </div>
         </section>

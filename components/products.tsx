@@ -99,7 +99,7 @@ export default function Products() {
             onMouseEnter={() => setHoveredCard(product.name)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            {(idx === 2 || idx === 3) && (
+            {(idx === 1 || idx === 3) && (
               <div className={`absolute inset-0 flex items-center justify-center z-20 pointer-events-none transition-opacity duration-300 ${hoveredCard === product.name ? 'opacity-100' : 'opacity-0'}`}>
                 <span className="bg-black/80 text-white text-lg font-semibold px-6 py-3 rounded-2xl shadow-lg border border-white/10">Coming Soon</span>
               </div>
@@ -123,6 +123,17 @@ export default function Products() {
                 {idx === 0 ? (
                   <a
                     href="https://rovyk.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group"
+                  >
+                    <div className="lg:w-20 lg:h-20 w-16 h-16 flex items-center justify-center border border-[#999999] rounded-full transition-colors duration-300 ease-in-out group-hover:border-white">
+                      <ArrowUpRight className="w-8 h-8 text-[#999999] transition-colors duration-300 ease-in-out group-hover:text-white" />
+                    </div>
+                  </a>
+                ) : idx === 2 ? (
+                  <a
+                    href="https://gitpeek.neuralpaths.ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group"
