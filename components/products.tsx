@@ -6,7 +6,7 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { ShineBorder } from "@/components/magicui/shine-border";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const products = [
   {
@@ -54,7 +54,7 @@ const products = [
 ];
 
 export default function Products() {
-  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     slides: {
       perView: 1.1,
       spacing: 24,
@@ -69,6 +69,26 @@ export default function Products() {
     },
     mode: "free-snap",
   });
+
+  useEffect(() => {
+    const slider = instanceRef.current;
+    if (!slider) return;
+
+    const handleScroll = (e: WheelEvent) => {
+      e.preventDefault();
+      if (e.deltaY > 0) {
+        slider.next();
+      } else {
+        slider.prev();
+      }
+    };
+
+    slider.container.addEventListener('wheel', handleScroll, { passive: false });
+    return () => {
+      slider.container.removeEventListener('wheel', handleScroll);
+    };
+  }, [instanceRef]);
+
   const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   return (
@@ -115,8 +135,9 @@ export default function Products() {
             <div className="p-8 lg:p-14 flex lg:min-h-[382px] flex-col justify-between h-full">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4 overflow-hidden">
+                  <div className="flex items-start gap-2 overflow-hidden">
                     <span className="text-white text-3xl xl:text-6xl font-semibold">{product.name}</span>
+                    <div className="bg-[#4B6358] text-white text-xs px-2 py-1 rounded-full">Beta</div>
                   </div>
                   <span className="text-white text-lg font-medium mb-2">{product.subtitle}</span>
                 </div>

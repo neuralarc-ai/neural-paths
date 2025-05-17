@@ -92,13 +92,16 @@ const Tools = () => {
                 <div className="flex flex-row justify-between items-start mb-8">
                   {/* Left: Logo and Name */}
                   <div className="flex flex-col gap-4">
-                    <span className={`lg:text-[56px] font-semibold ${
-                      tool.name === "Lawbit" ? "text-[#978163]" :
-                      tool.name === "Okra" ? "text-[#425B88]" :
-                      tool.name === "Spider" ? "text-[#7C7C7C]" :
-                      tool.name === "Pikra" ? "text-[#CEAD9D]" :
-                      "text-white"
-                    }`}>{tool.name}</span>
+                    <div className="flex items-start gap-1">
+                      <span className={`lg:text-[56px] font-semibold ${
+                        tool.name === "Lawbit" ? "text-[#978163]" :
+                        tool.name === "Okra" ? "text-[#425B88]" :
+                        tool.name === "Spider" ? "text-[#7C7C7C]" :
+                        tool.name === "Pikra" ? "text-[#CEAD9D]" :
+                        "text-white"
+                      }`}>{tool.name}</span>
+                      <div className="bg-[#4B6358] text-white text-xs px-2 py-1 rounded-full">Beta</div>
+                    </div>
                   </div>
                   {/* Right: Arrow Icon Link */}
                   <a
