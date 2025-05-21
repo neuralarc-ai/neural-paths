@@ -30,10 +30,11 @@ const Navbar = () => {
           src="/images/neural-paths-logo.svg"
           alt="Neural Paths Logo"
           width={82}
-          height={40}
+          height={60}
           priority
-          className="w-[40px] h-[40px] xl:w-[82px] xl:h-[40px]"
+          className="w-[80px] h-[40px] xl:w-[82px] xl:h-[40px]"
         />
+        <span className="font-bold text-white lg:text-2xl text-lg">NeuralPaths</span>
       </Link>
       {/* Right: Link and Button */}
       <div className="hidden lg:flex items-center space-x-6">
