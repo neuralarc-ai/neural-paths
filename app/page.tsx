@@ -26,7 +26,7 @@ export default function Home() {
           width={300}
           height={600}
           priority
-          className="absolute left-0 top-0 lg:top-8 -z-5 xl:w-[400px] object-contain md:w-[200px] w-[100px]"
+          className="absolute left-0 top-0 lg:top-8 -z-5 xl:w-[300px] object-contain lg:w-[100px] md:block hidden"
         />
       </motion.div>
       <motion.div

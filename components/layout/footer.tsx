@@ -68,8 +68,8 @@ const Footer = () => {
               <Image
                 src="/images/neural-arc-logo.svg"
                 alt="NeuralArc Logo"
-                width={100}
-                height={20}
+                width={25}
+                height={25}
                 className="inline-block"
               />
             </Link>
