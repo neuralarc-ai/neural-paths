@@ -37,7 +37,7 @@ export default function Home() {
         <Image
           src="/images/hero/top-left.png"
           alt="Top Left Shape"
-          width={324}
+          width={224}
           height={260}
           priority
           className="absolute xl:left-[288px] hidden xl:block top-0 -z-5"
@@ -68,7 +68,7 @@ export default function Home() {
           width={582}
           height={542}
           priority
-          className="absolute right-0 top-0 -z-5 lg:-top-20 overflow-x-clip xl:w-[582px] object-contain md:w-[382px] w-[200px]"
+          className="absolute right-0 top-0 -z-5 lg:-top-20 overflow-x-clip xl:w-[482px] object-contain md:w-[282px] w-[100px]"
         />
       </motion.div>
       <Navbar />
