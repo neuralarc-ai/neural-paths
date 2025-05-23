@@ -29,10 +29,10 @@ const Navbar = () => {
         <Image
           src="/images/neural-paths-logo.svg"
           alt="Neural Paths Logo"
-          width={82}
+          width={220}
           height={60}
           priority
-          className="w-[80px] h-[40px] xl:w-[82px] xl:h-[50px]"
+          className="w-[100px] h-auto lg:w-[200px]"
         />
       </Link>
       {/* Right: Link and Button */}
