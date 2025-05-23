@@ -14,7 +14,7 @@ const tools = [
     subtitle: "AI for Legal Intelligence",
     description:
       "Create, review and optimize contracts with ease. Lawbit streamlines every step of legal drafting from patent generation to compliance management.",
-    link: "https://lawbit.ai",
+    link: "https://lawbit.neuralpaths.ai",
   },
   {
     name: "Okra",
@@ -24,7 +24,7 @@ const tools = [
     subtitle: "AI for Smarter Business Decisions",
     description:
       "Okra gives you deep insights and analysis on your business idea. Understand potential, spot gaps and make smarter decisions with AI-powered clarity.",
-    link: "https://okra.neuralarc.ai",
+    link: "https://okra.neuralpaths.ai",
   },
   {
     name: "Spider",
@@ -74,7 +74,7 @@ const Tools = () => {
                 <ShineBorder 
                   shineColor={["#B7A98B", "#5B7CA6", "#C6AEA3"]}
                   duration={8}
-                  borderWidth={8}
+                  borderWidth={4}
                   className="rounded-3xl"
                 />
               </div>

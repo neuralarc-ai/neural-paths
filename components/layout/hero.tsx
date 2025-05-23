@@ -10,14 +10,14 @@ const Hero = () => {
     >
 
       {/* Content */}
-      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-center lg:h-[400px] max-w-[1280px] mx-auto px-4">
+      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center justify-center lg:h-[300px] max-w-[1528px] mx-auto px-4">
         {/* Left: NeuralArc (centered vertically) */}
         {/* <div className="flex-1 flex items-center justify-center h-full">
           <span className="text-white font-light lg:text-[80px] text-5xl leading-none tracking-tight">NeuralArc</span>
         </div> */}
         {/* Right: NeuralPaths (bottom-aligned) */}
-        <div className="flex-1 flex items-start justify-center h-full pb-10">
-          <span className="text-white font-light lg:text-[80px] text-5xl leading-none tracking-tight">NeuralPaths</span>
+        <div className="flex-1 flex items-end justify-center h-full pb-10 px-8">
+          <span className="text-white font-bold lg:text-[80px] text-5xl leading-none text-center tracking-tight">Built to match the speed of your vision</span>
         </div>
       </div>
     </motion.section>

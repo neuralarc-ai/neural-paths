@@ -118,7 +118,7 @@ export default function Products() {
                     <ShineBorder
                       shineColor={["#B7A98B", "#5B7CA6", "#C6AEA3"]}
                       duration={8}
-                      borderWidth={8}
+                      borderWidth={4}
                       className="rounded-3xl"
                     />
                   </div>
